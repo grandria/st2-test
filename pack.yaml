@@ -1,0 +1,6 @@
+---
+name: st2-test
+description: "Testing Stackstorm Package"
+version: "1.0.0"
+author: toto
+email: toto@gmail.com

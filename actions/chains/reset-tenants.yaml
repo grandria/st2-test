@@ -1,0 +1,27 @@
+---
+
+chain:
+  - name: "sql-dump"
+    ref: "default.sql_dump"
+    parameters:
+      cluster: "{{ input_cluster }}"
+      tenant_id: "{{ input_tenant_id }}"
+      client_group: "{{ input_client_group }}"
+    on-success: "reset-tenant"
+
+  - name: "reset-tenant"
+    ref: "default.reset_tenant"
+    parameters:
+      cluster: "{{ input_cluster }}"
+      tenant_id: "{{ input_tenant_id }}"
+      client_group: "{{ input_client_group }}"
+    on-success: "clean-s3"
+
+  - name: "clean-s3"
+    ref: "default.clean_S3"
+    parameters:
+      cluster: "{{ input_cluster }}"
+      tenant_id: "{{ input_tenant_id }}"
+      client_group: "{{ input_client_group }}"
+
+default: "sql-dump"
