@@ -23,5 +23,12 @@ chain:
       cluster: "{{ input_cluster }}"
       tenant_id: "{{ input_tenant_id }}"
       client_group: "{{ input_client_group }}"
+    on-success: "echo-okay"
+
+  - name: "echo-okay"
+    ref: "core.echo"
+    parameters:
+      message: "Tout est ok"
+
 
 default: "sql-dump"
