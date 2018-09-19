@@ -1,0 +1,24 @@
+---
+
+name: "chain-reset-tenant"
+description: "Testing Reset Tenant Chain"
+
+runner_type: "action-chain"
+
+entry_point: "chains/reset-tenants.yaml"
+
+enabled: true
+
+parameters:
+  input_cluster:
+    type: "string"
+    required: true
+    description: "Cluster Name"
+  input_client_group:
+    type: "string"
+    required: true
+    description: "CG Name"
+  input_tenant_id:
+    type: "string"
+    required: true
+    description: "Tenant Name"
