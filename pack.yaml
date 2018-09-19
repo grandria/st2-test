@@ -1,5 +1,5 @@
 ---
-name: st2-test
+name: st2test
 description: "Testing Stackstorm Package"
 version: "1.0.0"
 author: toto
