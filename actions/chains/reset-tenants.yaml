@@ -2,7 +2,7 @@
 
 chain:
   - name: "sql-dump"
-    ref: "default.sql_dump"
+    ref: "st2test.sql_dump"
     parameters:
       cluster: "{{ input_cluster }}"
       tenant_id: "{{ input_tenant_id }}"
@@ -10,7 +10,7 @@ chain:
     on-success: "reset-tenant"
 
   - name: "reset-tenant"
-    ref: "default.reset_tenant"
+    ref: "st2test.reset_tenant"
     parameters:
       cluster: "{{ input_cluster }}"
       tenant_id: "{{ input_tenant_id }}"
@@ -18,7 +18,7 @@ chain:
     on-success: "clean-s3"
 
   - name: "clean-s3"
-    ref: "default.clean_S3"
+    ref: "st2test.clean_S3"
     parameters:
       cluster: "{{ input_cluster }}"
       tenant_id: "{{ input_tenant_id }}"
