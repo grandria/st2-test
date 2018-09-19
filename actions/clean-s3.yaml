@@ -1,0 +1,21 @@
+name: "clean_S3"
+runner_type: "local-shell-script"
+description: "Clean S3 Tenant"
+enabled: true
+entry_point: "scripts/clean-s3.sh"
+parameters:
+  cluster:
+    type: "string"
+    description: "Cluster Name"
+    required: true
+    position: 0
+  tenant_id:
+    type: "string"
+    description: "tenant name"
+    required: true
+    position: 1
+  client_group:
+    type: "string"
+    description: "Client Group Name"
+    required: true
+    position: 2

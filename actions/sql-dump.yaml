@@ -1,0 +1,22 @@
+---
+name: "sql_dump"
+runner_type: "local-shell-script"
+description: "SQL DUMP of environment"
+enabled: true
+entry_point: "scripts/sql-dump.sh"
+parameters:
+  cluster:
+    type: "string"
+    description: "Cluster Name"
+    required: true
+    position: 0
+  tenant_id:
+    type: "string"
+    description: "tenant name"
+    required: true
+    position: 1
+  client_group:
+    type: "string"
+    description: "Client Group Name"
+    required: true
+    position: 2
